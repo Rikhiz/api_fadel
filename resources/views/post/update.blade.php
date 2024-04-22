@@ -12,14 +12,14 @@
                 <form id="formData_edit" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="post_id">
                     <div class="form-group">
-                        <label for="name" class="control-label">Title</label>
+                        <label for="name" class="control-label">Title</label>   
                         <input type="text" class="form-control" id="title-edit">
                         <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-title-edit"></div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="control-label">Image</label>
                         <input type="file" class="form-control" id="image-edit">
-                        <img id="gambar" width="50" height="50">
+                        <img id="gambar" width="50" height="50">composer require laravel/ui
                         <div class="alert alert-danger mt-2 d-none" role="alert" id="alert-image-edit"></div>
                     </div>
                     <div class="form-group">
@@ -63,7 +63,7 @@
 
     // Action to update post
     $('body').on('submit', '#formData_edit', function (e) {
-        e.preventDefault();x
+        e.preventDefault();
         e.stopPropagation();
         let post_id = $('#post_id').val();
         var form = new FormData();
