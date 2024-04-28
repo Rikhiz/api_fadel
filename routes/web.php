@@ -24,5 +24,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/',function(){
-    return view('welcome');
+     return view('welcome');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('logout',[App\Http\Controllers\Api\AuthController::class, 'logout']);

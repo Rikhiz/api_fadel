@@ -51,4 +51,10 @@ class AuthController extends Controller
 
         return $this->baseController->sendResponse($success, 'User created successfully.');
     }
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }

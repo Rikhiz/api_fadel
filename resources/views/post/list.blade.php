@@ -30,7 +30,7 @@ shrink-to-fit=no">
 					<div class="card-body">
 						<a href="javascript:void(0)" class="btn btn-success mb-2" id="btn-create-post">TAMBAH</a>
 
-						<table class="table table-bordered table-striped">
+						<table id="kt_datatable_example_5" class="table table-bordered table-striped">
 							<thead>
 								<tr>
 									<th>Title</th>
@@ -67,6 +67,27 @@ shrink-to-fit=no">
     }
 });
 	</script>
+	@section('js')
+    <script src="{{ url('demo1/dist/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <script>
+        $("#kt_datatable_example_5").DataTable({
+            "language": {
+                "lengthMenu": "Show _MENU_",
+            },
+            "dom": "<'row'" +
+                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                ">" +
+
+                "<'table-responsive'tr>" +
+
+                "<'row'" +
+                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                ">"
+        });
+    </script>
+@endsection
 	@include('post.modal-create')
 	@include('post.update')
 	@include('post.delete')
